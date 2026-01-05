@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebGuide - Request Assistance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .page { display: none; }
+        .active { display: block; }
+        .nav-btn { padding: 8px 12px; border-radius: 6px; transition: background 0.2s; }
+        .nav-btn:hover { background: rgba(255,255,255,0.1); }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-900">
+
+    <nav class="bg-[#1a365d] text-white p-4 sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <div class="bg-white p-1 rounded-lg">
+                    <img src="https://via.placeholder.com/150x50/FFFFFF/1a365d?text=WebGuide+Logo" alt="WebGuide Logo" class="h-10">
+                </div>
+                <h1 class="text-2xl font-bold tracking-tight">WebGuide</h1>
+            </div>
+            <div class="flex flex-wrap justify-center gap-2 text-sm font-medium">
+                <button onclick="showPage('page1')" class="nav-btn">Request</button>
+                <button onclick="showPage('page2')" class="nav-btn">Meetings</button>
+                <button onclick="showPage('page3')" class="nav-btn">Agents</button>
+                <button onclick="showPage('page4')" class="nav-btn">History</button>
+                <button onclick="showPage('page5')" class="nav-btn">Account</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto p-6 max-w-2xl">
+
+        <section id="page1" class="page active">
+            <h2 class="text-2xl font-bold mb-6 text-blue-900">Request a Web Guide</h2>
+            <div class="space-y-6 bg-white p-6 rounded-xl shadow-sm border">
+                <div>
+                    <label class="block font-bold text-gray-700">Step 1: The Category (Site/App URL)</label>
+                    <input type="url" placeholder="Enter URL (e.g. https://site.com)" class="w-full p-3 border rounded-lg mt-2 focus:ring-2 focus:ring-blue-500 outline-none">
+                    <select class="w-full p-3 border rounded-lg mt-3 bg-gray-50">
+                        <option disabled selected>What is the need?</option>
+                        <option>Guidance on the site map</option>
+                        <option>Stuck in a loop</option>
+                        <option>General information on how to transmit: docs/subscription or inscriptions</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block font-bold text-gray-700">Step 2: The Help Level</label>
+                    <div class="grid grid-cols-1 gap-2 mt-2">
+                        <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50">
+                            <input type="radio" name="level" class="w-4 h-4 text-blue-600">
+                            <span class="ml-3"><strong>Type C:</strong> Comfortable knowledge</span>
+                        </label>
+                        <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50">
+                            <input type="radio" name="level" class="w-4 h-4 text-blue-600">
+                            <span class="ml-3"><strong>Type B:</strong> Accustomed user</span>
+                        </label>
+                        <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50">
+                            <input type="radio" name="level" class="w-4 h-4 text-blue-600">
+                            <span class="ml-3"><strong>Type A:</strong> Expert (Former/Current Employee)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block font-bold text-gray-700">Step 3: Timeline</label>
+                    <div class="grid grid-cols-2 gap-4 mt-2">
+                        <button class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-lg shadow-md transition">Now (Available Agents)</button>
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg shadow-md transition">Later Time (Schedule)</button>
+                    </div>
+                </div>
+
+                <div class="pt-4 border-t">
+                    <label class="block font-bold text-gray-700">Additional Preferences</label>
+                    <select class="w-full p-3 border rounded-lg mt-2 bg-gray-50">
+                        <option>Select Language / Accent</option>
+                        <option>English (Neutral)</option>
+                        <option>English (UK Accent)</option>
+                        <option>Spanish</option>
+                        <option>French</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <section id="page2" class="page">
+            <h2 class="text-2xl font-bold mb-6 text-blue-900">Upcoming Meeting</h2>
+            <div class="bg-white p-8 rounded-xl shadow-sm border text-center">
+                <div class="mb-6 p-10 border-2 border-dashed border-gray-200 rounded-lg text-gray-400">
+                    <p>Integrated Calendar View</p>
+                    <p class="text-xs uppercase mt-2 font-bold tracking-widest">No Events Scheduled</p>
+                </div>
+                <label class="block font-bold text-gray-700 mb-2">Select Platform</label>
+                <div class="flex justify-center gap-3">
+                    <button class="px-4 py-2 border rounded hover:bg-blue-50">Zoom</button>
+                    <button class="px-4 py-2 border rounded hover:bg-blue-50">Teams</button>
+                    <button class="px-4 py-2 border rounded hover:bg-blue-50">Google Meet</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="page3" class="page">
+            <h2 class="text-2xl font-bold mb-6 text-blue-900">Available Waiting Agents</h2>
+            <div class="space-y-4">
+                <div class="bg-white p-5 rounded-xl border shadow-sm flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center font-bold text-blue-600">JS</div>
+                        <div>
+                            <p class="font-bold">Jane Smith</p>
+                            <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">Available Now</span>
+                        </div>
+                    </div>
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-bold">Select</button>
+                </div>
+                <div class="bg-white p-5 rounded-xl border shadow-sm flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center font-bold text-gray-600">RM</div>
+                        <div>
+                            <p class="font-bold">Robert Miller</p>
+                            <span class="text-xs bg-yellow-100 text-yellow-700 px-2 py-1 rounded-full">Busy (5m)</span>
+                        </div>
+                    </div>
+                    <button class="bg-gray-200 text-gray-500 px-4 py-2 rounded-lg text-sm font-bold cursor-not-allowed">Queue</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="page4" class="page">
+            <h2 class="text-2xl font-bold mb-6 text-blue-900">History</h2>
+            <div class="grid grid-cols-4 gap-2 mb-6">
+                <select class="border p-2 rounded text-xs"><option>Year</option></select>
+                <select class="border p-2 rounded text-xs"><option>Month</option></select>
+                <select class="border p-2 rounded text-xs"><option>Week</option></select>
+                <select class="border p-2 rounded text-xs"><option>Day</option></select>
+            </div>
+            <div class="bg-white p-10 rounded-xl border text-center text-gray-400 italic">
+                Select filters to view past assistance sessions.
+            </div>
+        </section>
+
+        <section id="page5" class="page">
+            <h2 class="text-2xl font-bold mb-6 text-blue-900">Account</h2>
+            <div class="bg-white p-6 rounded-xl border shadow-sm space-y-4 mb-8">
+                <h3 class="font-bold border-b pb-2">Personal Info</h3>
+                <input type="text" placeholder="Name" class="w-full p-2 border rounded">
+                <input type="text" placeholder="Address" class="w-full p-2 border rounded">
+                <input type="tel" placeholder="Phone" class="w-full p-2 border rounded">
+            </div>
+
+            <div class="bg-gradient-to-r from-blue-900 to-blue-800 text-white p-8 rounded-2xl shadow-xl">
+                <h3 class="text-2xl font-black mb-2 italic underline text-yellow-400">JOIN OUR TEAM [GET PAID]</h3>
+                <p class="mb-6 opacity-90">Help others navigate the web and earn per session.</p>
+                
+                <div class="space-y-4 text-gray-900">
+                    <div class="bg-white p-4 rounded-lg">
+                        <label class="block text-xs font-bold uppercase text-gray-500 mb-1">Select Your Skills</label>
+                        <select class="w-full p-2 border-none outline-none">
+                            <option>UI/UX Navigation Expert</option>
+                            <option>Account Setup Specialist</option>
+                            <option>Technical Documentation Guide</option>
+                        </select>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-lg">
+                        <label class="block text-xs font-bold uppercase text-gray-500 mb-1">Max Call Duration</label>
+                        <select class="w-full p-2 border-none outline-none">
+                            <option>5 Minutes (Min)</option>
+                            <option>15 Minutes</option>
+                            <option>30 Minutes</option>
+                            <option>1 Hour (Max)</option>
+                        </select>
+                        <p class="text-[10px] text-gray-400 mt-2 italic">* You can voluntarily end the call prior to the end.</p>
+                    </div>
+
+                    <div class="flex gap-3">
+                        <button class="flex-1 bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-black py-4 rounded-xl transition uppercase">Submit Application</button>
+                        <button class="px-6 bg-white/20 hover:bg-white/30 text-white py-4 rounded-xl transition">Save</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="mt-12 p-6 bg-red-50 border-t-4 border-red-500 rounded-lg shadow-inner">
+            <h4 class="text-red-800 font-bold uppercase text-xs mb-1">Disclaimer</h4>
+            <p class="text-red-700 text-sm leading-relaxed">
+                Please note no abuse or prejudice will be allowed towards the Assistance Personship web guide agents.
+            </p>
+        </footer>
+    </main>
+
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    </script>
+</body>
+</html>
