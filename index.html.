@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebGuide - Personship</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .page { display: none; }
+        .active { display: block; }
+        .nav-btn { padding: 8px 12px; border-radius: 6px; transition: all 0.2s; }
+        .nav-btn:hover { background: #2d4f3a; color: white; }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-900">
+
+    <nav class="bg-[#3e5c49] text-white p-4 sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <div class="bg-white p-1 rounded-lg">
+                    <img src="https://raw.githubusercontent.com/cadopaul78-png/PshipASST/main/1000019125.jpg" alt="Personship Logo" class="h-12">
+                </div>
+                <h1 class="text-2xl font-bold tracking-tight">Personship Guide</h1>
+            </div>
+            <div class="flex flex-wrap justify-center gap-2 text-sm font-medium">
+                <button onclick="showPage('page1')" class="nav-btn">Request</button>
+                <button onclick="showPage('page2')" class="nav-btn">Meetings</button>
+                <button onclick="showPage('page3')" class="nav-btn">Agents</button>
+                <button onclick="showPage('page4')" class="nav-btn">History</button>
+                <button onclick="showPage('page5')" class="nav-btn">Account</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto p-6 max-w-2xl">
+        <section id="page1" class="page active">
+            <h2 class="text-2xl font-bold mb-6 text-[#3e5c49]">Request a Web Guide</h2>
+            <div class="space-y-6 bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+                <div>
+                    <label class="block font-bold text-gray-700">Step 1: The Category (URL)</label>
+                    <input type="url" placeholder="https://site.com" class="w-full p-3 border rounded-lg mt-2 outline-none focus:border-[#3e5c49]">
+                    <select class="w-full p-3 border rounded-lg mt-3 bg-gray-50">
+                        <option disabled selected>What is the need?</option>
+                        <option>Guidance on the site map</option>
+                        <option>Stuck in a loop</option>
+                        <option>General information on how to transmit docs</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block font-bold text-gray-700">Step 2: The Help Level</label>
+                    <div class="grid grid-cols-1 gap-2 mt-2">
+                        <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-green-50"><input type="radio" name="level" class="w-4 h-4"><span class="ml-3">Type C: Comfortable</span></label>
+                        <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-green-50"><input type="radio" name="level" class="w-4 h-4"><span class="ml-3">Type B: Accustomed</span></label>
+                        <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-green-50"><input type="radio" name="level" class="w-4 h-4"><span class="ml-3">Type A: Expert</span></label>
+                    </div>
+                </div>
+                <div>
+                    <label class="block font-bold text-gray-700">Step 3: Timeline</label>
+                    <div class="grid grid-cols-2 gap-4 mt-2">
+                        <button class="bg-[#3e5c49] text-white font-bold py-3 rounded-lg">Now</button>
+                        <button class="bg-gray-200 text-gray-700 font-bold py-3 rounded-lg">Later</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="page5" class="page">
+            <h2 class="text-2xl font-bold mb-6 text-[#3e5c49]">Account</h2>
+            <div class="bg-[#3e5c49] text-white p-8 rounded-2xl shadow-xl">
+                <h3 class="text-2xl font-black mb-2 italic underline text-yellow-400">JOIN OUR TEAM [GET PAID]</h3>
+                <div class="space-y-4 mt-4 text-gray-900">
+                    <div class="bg-white p-4 rounded-lg">
+                        <label class="block text-xs font-bold text-gray-500 uppercase">Max Call Duration</label>
+                        <select class="w-full p-2 border-none">
+                            <option>5 Minutes (Min)</option>
+                            <option>15 Minutes</option>
+                            <option>30 Minutes</option>
+                            <option>1 Hour (Max)</option>
+                        </select>
+                    </div>
+                    <button class="w-full bg-yellow-400 text-[#3e5c49] font-black py-4 rounded-xl uppercase">Submit Application</button>
+                </div>
+            </div>
+        </section>
+
+        <footer class="mt-12 p-6 bg-red-50 border-t-4 border-red-500 rounded-lg">
+            <p class="text-red-700 text-sm"><strong>Disclaimer:</strong> No abuse or prejudice will be allowed towards the Assistance Personship web guide agents.</p>
+        </footer>
+    </main>
+
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    </script>
+</body>
+</html>
